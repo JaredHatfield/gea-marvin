@@ -1,4 +1,3 @@
-
 var gea = require("gea-sdk");
 var adapter = require("gea-adapter-usb");
 var push2speech = require("./push2speech");
@@ -21,7 +20,24 @@ app.bind(adapter, function (bus) {
 
         refrigerator.doorState.subscribe(function (value) {
             console.log("subscribe:", value);
-            push2speech.talk("Door state is " + value.doorState);
+            
+            var doorbits = (value.doorState).toString(2);
+
+            if(doorbits[1] == 1){
+              talk('Freezer door open');
+            }
+            
+            if(doorbits[3] == 1){
+              talk('Freezer bottom door open');
+            }
+            
+            if(doorbits[4] == 1){
+              talk('Fresh food left door open');
+            }
+            
+            if(doorbits[5] == 1){
+              talk('Fresh food right door open');
+            }
         });
     });
 });
