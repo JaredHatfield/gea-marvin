@@ -24,19 +24,19 @@ app.bind(adapter, function (bus) {
             var doorbits = (value.doorState).toString(2);
 
             if(doorbits[1] == 1){
-              talk('Freezer door open');
+              push2speech.talk('Freezer door open');
             }
             
             if(doorbits[3] == 1){
-              talk('Freezer bottom door open');
+              push2speech.talk('Freezer bottom door open');
             }
             
             if(doorbits[4] == 1){
-              talk('Fresh food left door open');
+              push2speech.talk('Fresh food left door open');
             }
             
             if(doorbits[5] == 1){
-              talk('Fresh food right door open');
+              push2speech.talk('Fresh food right door open');
             }
         });
     });
