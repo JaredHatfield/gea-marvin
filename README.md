@@ -1,7 +1,7 @@
 gea-marvin
 ==========
 
-This application uses [Push to Speech for Android](https://pushtospeech.appspot.com/) to make appliances talk.
+This application uses [Push to Speech for Android](https://pushtospeech.appspot.com/) to make appliances talk with the [gea-sdk](https://github.com/GEMakers/gea-sdk) talking to GE appliances such as a refrigerator.
 
 Configuration
 -------------
