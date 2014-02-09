@@ -17,6 +17,7 @@ app.bind(adapter, function (bus) {
     bus.on("refrigerator", function (refrigerator) {
         console.log("address:", refrigerator.address);
         console.log("version:", refrigerator.version.join("."));
+        push2speech.talk('Fridge connected.');
 
         refrigerator.doorState.subscribe(function (value) {
             console.log("subscribe:", value);
