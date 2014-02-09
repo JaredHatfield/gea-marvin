@@ -1,4 +1,10 @@
-var config = require('./config');
+
+try {
+  var config = require('./config');
+} catch(e) {
+  console.log('config.js file is required. See README.md for details. Exiting now.');
+  process.exit(1);
+}
 
 var request = require('request');
 
