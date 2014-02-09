@@ -1,4 +1,3 @@
-
 var config = require('./config');
 
 var request = require('request');
@@ -17,6 +16,10 @@ exports.talk = function talk(words) {
   };
 
   request(options, function (error, response, body) {
-  
+    if (!error && response.statusCode == 200) {
+      console.log('TALK SUCCESS: ' + words);
+    } else {
+      console.log('TALK FAILED: ' + words);
+    }
   });
 }
